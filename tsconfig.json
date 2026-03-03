@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["webworker"],
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["tests/Pages/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "tests/**/*.ts"
+  ]
+}

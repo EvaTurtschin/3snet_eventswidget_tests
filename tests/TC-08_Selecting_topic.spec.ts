@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import BasePage from './Pages/BasePage';
+import BasePage from '@pages/BasePage';
 
 test('TC-08 Выбор тематики', async ({ page }) => {
   const basePage = new BasePage(page);

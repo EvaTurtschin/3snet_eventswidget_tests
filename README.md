@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/EvaTurtschin/3snet_eventswidget_tests/workflows/Tests/badge.svg)](https://github.com/EvaTurtschin/3snet_eventswidget_tests/actions)
+
 # 3snet Calendar Widget Automation
 
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
@@ -151,6 +153,8 @@ await page.goto('');
   await expect(widthInput).toHaveValue(expectedSliderValue.toString());
 });
 ```
+## 🧪 Последний отчёт тестов
+![Tests Report](playwright-report/index.html)
 
 ## 📌 Примечания
 

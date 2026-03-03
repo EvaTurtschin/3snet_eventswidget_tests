@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import BasePage from './Pages/BasePage';
+import BasePage from '@pages/BasePage';
 
 test('TC-03 Граничные значения ширины - негативные проверки', async ({ page }) => {
   const basePage = new BasePage(page);

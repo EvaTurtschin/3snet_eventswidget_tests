@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import BasePage from '../tests/Pages/BasePage';
+import BasePage from '@pages/BasePage';
 
 
 test('TC-01 Генерация iframe с дефолтными значениями', async ({ page }) => {
