@@ -2,7 +2,7 @@
 
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
 
-[Tests passing](https://github.com/EvaTurtschin/3snet_eventswidget_tests/actions)
+## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](playwright-report/index.html)
 
 ## 📚 Документация проекта
@@ -154,8 +154,6 @@ await page.goto('');
   await expect(widthInput).toHaveValue(expectedSliderValue.toString());
 });
 ```
-## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
-
 ## 📌 Примечания
 
 - Тесты не требуют ручной перезагрузки страницы между шагами — все проверки происходят динамически.
