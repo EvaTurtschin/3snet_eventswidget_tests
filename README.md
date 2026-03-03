@@ -154,8 +154,7 @@ await page.goto('');
   await expect(widthInput).toHaveValue(expectedSliderValue.toString());
 });
 ```
-## 🧪 Последний отчёт тестов
-![Tests Report](playwright-report/index.html)
+## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
 
 ## 📌 Примечания
 
