@@ -1,8 +1,9 @@
-[![Playwright Tests](https://github.com/EvaTurtschin/3snet_eventswidget_tests/workflows/Tests/badge.svg)](https://github.com/EvaTurtschin/3snet_eventswidget_tests/actions)
-
 # 3snet Calendar Widget Automation
 
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
+
+[![Tests passing](https://github.com/EvaTurtschin/3snet_eventswidget_tests/workflows/Tests/badge.svg)](https://github.com/EvaTurtschin/3snet_eventswidget_tests/actions)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](playwright-report/index.html)
 
 ## 📚 Документация проекта
 
