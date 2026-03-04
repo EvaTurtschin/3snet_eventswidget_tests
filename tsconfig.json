@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["webworker"],
-    "moduleResolution": "bundler",
+    "lib": ["DOM", "ES2022"],
+    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["tests/Pages/*"]
+      "@pages/*": ["tests/Pages/*"],
+      "@testData/*": ["tests/TestData/*"]
     },
     "strict": true,
     "esModuleInterop": true
