@@ -59,13 +59,33 @@ export default class BasePage {
         await new Promise(r => setTimeout(r, delay)); 
       }
     }
-
-    // Пример заготовки под заполнение форм из CSV
-    /* async fillFormFromCSV(data: { [key: string]: string }) {
-    //     for (const field in data) {
-    //         await this.page.locator(`input[name="${field}"]`).fill(data[field]);
-    //     }
-       }*/
-
   }
+
+  async generatePreviewSafely(generateBtn: Locator, retries = 3): Promise<void> {
+    const errors: string[] = [];
+    
+    // Ловим ошибки ДО клика
+    this.page.on('console', (msg) => {
+      if (msg.type() === 'error' || msg.type() === 'warning') {
+        errors.push(msg.text());
+      }
+    });
+    
+    // Генерируем превью с retry
+    await this.generatePreviewWithRetry(generateBtn, retries);
+    
+    // Проверяем результат
+    await this.checkCodeTextareaVisible();
+    await this.checkPreviewVisible();
+    await this.waitForIframeAttached();
+    
+    // ожидаем ошибки = 0
+    if (errors.length === 0) {
+      console.log('✅ Console: 0 ошибок при генерации превью');
+    } else {
+      console.error('🚨 Console errors:', errors.join('\n'));
+      throw new Error(`Found ${errors.length} console errors`);
+    }
+  }
+  
 }
