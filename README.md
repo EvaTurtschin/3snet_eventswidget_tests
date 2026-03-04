@@ -18,19 +18,24 @@
 ## 📂 Структура проекта
 
 >3snet_eventswidget_tests/                           
->│                            
->├─ Pages/ # Page Object классы                  
->│ └─ BasePage.ts                             
->│                             
->├─ TestData/ # Тестовые данные и фикстуры                          
->│                           
->├─ tests/ # Тесты (Playwright)                              
+>│                                                
+>├─ tests/ # Тесты (Playwright)
 >│ ├─ TC-01_.spec.ts                                
 >│ ├─ TC-02_.spec.ts                             
->│ └─ ...                                
->│                                              
+>│ ├─                           
+>│ └─...                                  
+>│                                                
+>├───── Pages/ # Page Object классы                                                
+>│    └─ BasePage.ts                                    
+>│                             
+>├───── TestData/ # Тестовые данные и фикстуры
+>│    ├─ csvReader.ts                                   
+>│    └─ topics.csv                               
+>│                                       
+>├─ .gitignore
 >├─ playwright.config.ts # Конфигурация Playwright                                      
->├─ package.json                                    
+>├─ package.json                          
+>├─ tsconfig.json                                  
 >└─ README.md                                                           
 
 - **Page Object** реализован в `BasePage.ts`, содержит локаторы и базовые методы для взаимодействия с элементами страницы.
