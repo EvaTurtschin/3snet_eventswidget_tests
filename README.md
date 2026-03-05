@@ -3,7 +3,7 @@
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
 
 ## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](playwright-report/index.html)
+
 
 ## 📚 Документация проекта
 
@@ -17,21 +17,40 @@
 
 ## 📂 Структура проекта
 
->3snet_eventswidget_tests/                           
+>3snet_eventswidget_tests/                                           
 >│                                                
->├─ tests/ # Тесты (Playwright)                                     
->│ ├─ TC-01_.spec.ts                                
->│ ├─ TC-02_.spec.ts                             
->│ ├─                           
->│ └─...                                  
+>├─ documentation                                         
+>│    ├─ project task.md                                                                       
+>│    ├─ bug-reports.md                                                                       
+>│    └─ Test-Cases                                                                
+>│       ├─ TC-01_.md                                
+>│       ├─ TC-02_.md                             
+>│       ├─                                              
+>│       └─...                                   
 >│                                                
->├───── Pages/ # Page Object классы                                                
+>├─ Pages/ # Page Object классы                                                
 >│    └─ BasePage.ts                                    
->│                             
->├───── TestData/ # Тестовые данные и фикстуры                        
+>│                                                 
+>├─ TestData/ # Тестовые данные и фикстуры                        
 >│    ├─ csvReader.ts                                                                       
 >│    └─ topics.csv                                                                
->│                                                                          
+>│                                                
+>├─ tests/ # Тесты (Playwright)                                     
+>│    ├─ TC-01_.spec.ts                                
+>│    ├─ TC-02_.spec.ts                             
+>│    ├─                                         
+>│    └─...                                  
+>│                                                   
+>├─ server/                    ← НОВОЕ! Веб-интерфейс управления тестами
+>│    └─ server.js              Сервер + UI + парсер JSON отчетов Playwright
+>│                                              
+>├─ public/                    ← НОВОЕ! HTML/JS интерфейс
+>│    └─ index.html             Главная страница с кнопкой "Запуск Теста"             
+>│                                                   
+>├─ test-history.json          ← НОВОЕ! Постоянная история запусков (50 записей)>
+>│                                                                         
+>├─ fixtures                                                             
+>│    └─pomFixtures.ts                                                              
 >├─ .gitignore                                                             
 >├─ playwright.config.ts # Конфигурация Playwright                                                            
 >├─ package.json                                                         
@@ -83,14 +102,24 @@ npx playwright test tests/TC-04_Synchronizing_slider_and_input_widths.spec.ts
 npx playwright test --reporter=list
 ```
 
-- Сформировать свежий Playwright отчет и отправить его в репозиторий, чтобы можно было открыть по ссылке из README
+- Запустить веб-интерфейс
 
 ```bash
-npx playwright test --reporter=html
-git add playwright-report/ -f
-git commit -m "Add test report"
-git subtree push --prefix playwright-report origin gh-pages
-```                    
+npm install  //Установка зависимостей (1 раз)
+
+Вариант A: Прямой запуск (рекомендуется для разработки)
+node server/server.js
+
+Вариант B: Через npm скрипты (удобно для продакшена)
+npm run app
+```
+
+  - Open in browser:  ***[Browser Link](http://localhost:3000)***
+
+- #### *Функции веб-интерфейса:*
+```bash
+Кнопка "Запуск Теста" → результаты в таблице + история запусков
+```
 
 ## 📝 Техническое описание проекта
 
@@ -109,6 +138,17 @@ git subtree push --prefix playwright-report origin gh-pages
 - Рандомизированные тестовые данные для стабильности регрессионного анализа
 
 - Path Aliases (@pages/BasePage)
+
+- Веб-интерфейс Test UI
+
+   - **server/server.js + public/index.html** — полнофункциональный веб-интерфейс:
+
+   - **Кнопка "Запуск Теста"** → `npx playwright test --reporter=html,json`
+   - **Детальная таблица** → парсинг `playwright-report.json` (TC-01, TC-02... статус/время)  
+   - **История запусков** → `test-history.json` (дата + результат + Подробно)
+   - **HTML отчет** → `/report/index.html` (официальный Playwright)
+   - **Постоянное сохранение** → F5/перезапуск сервера = история НЕ теряется
+   - **Логика:** Запуск → Детали → Закрыть → Новая строка в истории (сверху)
 
 - Покрытие автоматизации
 
@@ -139,6 +179,12 @@ git subtree push --prefix playwright-report origin gh-pages
 - Проект самодостаточный: инструкции в README позволяют запустить его на любой машине с Node.js.
 
 - Архитектура соответствует POM, код читаемый и структурированный.
+
+- Веб-интерфейс Test UI — кнопка запуска → таблица результатов + история
+
+- Парсинг JSON отчетов — точное соответствие Playwright (учитывает retries/workers)
+
+- Постоянная история — сохраняется между перезапусками (test-history.json)
 
 ## 🧪 Пример автоматизированного теста
 

@@ -5,8 +5,8 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["tests/Pages/*"],
-      "@testData/*": ["tests/TestData/*"]
+      "@pages/*": ["Pages/*"],
+      "@testData/*": ["TestData/*"]
     },
     "strict": true,
     "esModuleInterop": true
