@@ -2,9 +2,6 @@
 
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
 
-## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
-
-
 ## 📚 Документация проекта
 
 В репозитории присутствуют следующие артефакты:
