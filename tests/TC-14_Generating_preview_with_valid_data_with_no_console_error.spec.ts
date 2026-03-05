@@ -3,7 +3,7 @@ import BasePage from '@pages/BasePage';
 import {loadTopics} from '@testData/csvReader';
 
 
-test('TC-14 Генерация превью с валидными данными без console ошибок', async ({ page }) => {
+test('TC-14 Проверка генерации превью с валидными данными без console ошибок', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

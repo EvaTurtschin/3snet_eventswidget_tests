@@ -1,7 +1,7 @@
-## **TC-08 Выбор тематики**
+## **TC-08 Проверка выбора тематики**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-08_Selecting_topic.spec.ts)
 
 ***Steps***:
 

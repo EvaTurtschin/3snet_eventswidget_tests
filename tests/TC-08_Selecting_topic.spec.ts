@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 import {loadTopics} from '@testData/csvReader';
 
-test('TC-08 Выбор тематики', async ({ page }) => {
+test('TC-08 Проверка выбора тематики', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

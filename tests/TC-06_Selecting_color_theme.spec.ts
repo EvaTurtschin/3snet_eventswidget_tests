@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-06 Выбор цветовой темы', async ({ page }) => {
+test('TC-06 Проверка выбора цветовой темы для генерации превью', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

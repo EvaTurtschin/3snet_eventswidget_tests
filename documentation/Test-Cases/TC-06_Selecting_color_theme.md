@@ -1,7 +1,7 @@
-## **TC-06 Выбор цветовой темы**
+## **TC-06 Проверка выбора цветовой темы для генерации превью**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-06_Selecting_color_theme.spec.ts)
 
 ***Steps***:
 

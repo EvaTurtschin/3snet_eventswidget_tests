@@ -1,7 +1,7 @@
-## **TC-03 Граничные значения ширины - негативные проверки**
+## **TC-03 Проверка невалидных значений ввода ширины превью - граничные значения**
 
 ***Priority***: P2
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-03_Width_validation_limit_values_Negativ_check.spec.ts)
 
 ***Steps***:
 

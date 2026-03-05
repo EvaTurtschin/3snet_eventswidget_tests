@@ -1,7 +1,7 @@
-## **TC-05 Опция "на всю ширину контейнера"**
+## **TC-05 Проверка работы radio-button "на всю ширину контейнера"**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-05_Full-width_container_option.spec.ts)
 
 ***Steps***:
 

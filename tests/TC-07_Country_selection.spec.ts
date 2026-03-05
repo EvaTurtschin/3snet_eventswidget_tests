@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-07 Выбор страны', async ({ page }) => {
+test('TC-07 Проверка выбора страны', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

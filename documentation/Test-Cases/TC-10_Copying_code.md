@@ -1,7 +1,7 @@
-## **TC-10 Копирование кода**
+## **TC-10 Проверка кнопки "Копирование кода"**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-10_Copying_code.spec.ts)
 
 ***Steps***:
 

@@ -1,7 +1,7 @@
-## **TC-09 Отмена выбора тематики**
+## **TC-09 Проверка функции отмены выбора тематики**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-09_Canceling_topic_selection.spec.ts)
 
 ***Steps***:
 

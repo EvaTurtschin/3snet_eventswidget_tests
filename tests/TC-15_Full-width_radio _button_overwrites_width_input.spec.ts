@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-15 Активированное "на всю ширину контейнера" перезаписывает предыдущий ввод значений ширины блока"', async ({ page }) => {
+test('TC-15 Активированная radio-button "на всю ширину контейнера" перезаписывает предыдущий ввод значений ширины блока"', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

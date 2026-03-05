@@ -1,7 +1,7 @@
-## **TC-14 Генерация превью с валидными данными без console ошибок**
+## **TC-14 Проверка генерации превью с валидными данными без console ошибок**
 
 ***Priority***: P1
-***Automation***: YES
+***Automation***: [YES](/tests/TC-14_Generating_preview_with_valid_data_with_no_console_error.spec.ts)
 
 ***Steps***:
 

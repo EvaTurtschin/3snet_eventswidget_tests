@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
 
-test('TC-13 Генерация превью при максимальной нагрузке < 2сек', async ({ page }) => {
+test('TC-13 Проверка генерации превью при максимальной нагрузке < 2сек', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

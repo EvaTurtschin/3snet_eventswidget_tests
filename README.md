@@ -2,8 +2,6 @@
 
 Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
 
-## [🧪 Test Report](https://evaturtschin.github.io/3snet_eventswidget_tests/)
-
 
 ## 📚 Документация проекта
 
@@ -45,7 +43,8 @@
 >│    └─ server.js              Сервер + UI + парсер JSON отчетов Playwright
 >│                                              
 >├─ public/                    ← НОВОЕ! HTML/JS интерфейс
->│    └─ index.html             Главная страница с кнопкой "Запуск Теста"             
+>│    ├─ index.html             Главная страница с кнопкой "Запуск Теста"             
+>│    └─ styles.css                                  
 >│                                                   
 >├─ test-history.json          ← НОВОЕ! Постоянная история запусков (50 записей)>
 >│                                                                         
@@ -82,7 +81,7 @@ npm install
 npx playwright install
 ```
 
-## 🧪 Запуск тестов
+## 🚀 Запуск тестов
 
 -  Запуск всех тестов:
 
@@ -96,7 +95,7 @@ npx playwright test
 npx playwright test tests/TC-04_Synchronizing_slider_and_input_widths.spec.ts
 ```
 
--  Запуск тестов с отчетом в консоли:
+## 🚀 Запуск тестов с отчетом в консоли:
 
 ```bash
 npx playwright test --reporter=list
@@ -104,13 +103,16 @@ npx playwright test --reporter=list
 
 - Запустить веб-интерфейс
 
+    - Вариант A : Прямой запуск (рекомендуется для разработки)
+
+
 ```bash
-npm install  //Установка зависимостей (1 раз)
-
-Вариант A: Прямой запуск (рекомендуется для разработки)
 node server/server.js
+```
+- 
+    - Вариант B: Через npm скрипты (удобно для продакшена)
 
-Вариант B: Через npm скрипты (удобно для продакшена)
+```bash
 npm run app
 ```
 

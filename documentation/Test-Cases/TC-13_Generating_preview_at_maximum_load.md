@@ -1,7 +1,7 @@
-## **TC-13 Генерация превью при максимальной нагрузке < 2сек**
+## **TC-13 Проверка генерации превью при максимальной нагрузке < 2сек**
 
 ***Priority***: P1
-***Automation***: YES
+***Automation***: [YES](/tests/TC-13_Generating_preview_at_maximum_load.spec.ts)
 
 ***Steps***:
 

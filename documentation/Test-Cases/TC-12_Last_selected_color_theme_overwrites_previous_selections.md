@@ -1,7 +1,7 @@
 ## **TC-12 Последняя выбранная цветовая тема перезаписывает предыдущие выборы**
 
 ***Priority***: P1
-***Automation***: YES
+***Automation***: [YES](/tests/TC-12_Last_selected_color_theme_overwrites_previous_selections.spec.ts)
 
 ***Steps***:
 

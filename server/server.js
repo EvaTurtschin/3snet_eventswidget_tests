@@ -10,8 +10,8 @@ const rootDir = path.join(__dirname, "..");
 const reportPaths = [
   path.join(rootDir, "test-results.json"),
   path.join(rootDir, "playwright-report/test-results.json"),
-  path.join(__dirname, "test-results.json"), // В папке server/
-  path.join(__dirname, "..", "test-results.json"), // Корень
+  path.join(__dirname, "test-results.json"), 
+  path.join(__dirname, "..", "test-results.json"), 
 ];
 
 let attempts = 0;
@@ -23,7 +23,6 @@ const checkReport = () => {
       console.log(`✅ НАЙДЕН: ${reportPath}`);
       try {
         const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
-        // ... парсинг как раньше
         return report;
       } catch (e) {
         console.log("Парсинг:", e.message);
@@ -32,7 +31,7 @@ const checkReport = () => {
   }
 
   if (attempts++ < maxAttempts) {
-    setTimeout(checkReport, 500); // Ждем 0.5с и пробуем снова
+    setTimeout(checkReport, 500); 
   } else {
     console.log("⚠️ JSON отчет не найден");
     return null;
@@ -72,18 +71,17 @@ app.get("/run-tests", (req, res) => {
             console.log("✅ Читаем:", reportPath);
             const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 
-            // 🔥 ТОЧНЫЙ ПАРСЕР ДЛЯ ТВОЕЙ СТРУКТУРЫ
             for (const suite of report.suites) {
               for (const spec of suite.specs) {
-                const testTitle = spec.title; // "TC-01 Генерация iframe..."
+                const testTitle = spec.title;
 
                 for (const test of spec.tests) {
                   if (test.results && test.results.length > 0) {
                     const lastResult = test.results[test.results.length - 1];
                     tests.push({
                       title: testTitle,
-                      status: lastResult.status, // "passed"
-                      duration: lastResult.duration, // 4346 мс
+                      status: lastResult.status, 
+                      duration: lastResult.duration, 
                     });
                   }
                 }
@@ -109,7 +107,7 @@ app.get("/run-tests", (req, res) => {
           tests: tests.length
             ? tests
             : [
-                // Убираем заглушки
+
                 { title: "TC-01_Default", status: "passed", duration: 1500 },
               ],
         };

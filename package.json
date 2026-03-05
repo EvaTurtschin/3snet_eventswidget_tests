@@ -19,6 +19,8 @@
   "dependencies": {
     "csv-parse": "^6.1.0",
     "express": "^5.2.1"
-  }
+  },
+
+  "types": "./tests/fixtures/pomFixtures.ts"
 
 }

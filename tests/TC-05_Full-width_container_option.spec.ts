@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-05 Опция "на всю ширину контейнера"', async ({ page }) => {
+test('TC-05 Проверка работы radio-button "на всю ширину контейнера"', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

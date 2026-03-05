@@ -1,7 +1,7 @@
-## **TC-02 Изменение ширины через input**
+## **TC-02 Проверка изменение ширины превью через input**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-02_Changing_width_through_input.spec.ts)
 
 ***Steps***:
 

@@ -1,7 +1,7 @@
-## **TC-01 Генерация iframe с дефолтными значениями**
+## **TC-01 Генерация кода iframe и превью с дефолтными значениями**
 
 ***Priority***: P1
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-01_Generation_with_default_data.spec.ts)
 
 ***Preconditions***: Страница загружена
 

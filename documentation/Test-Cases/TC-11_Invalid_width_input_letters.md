@@ -1,7 +1,7 @@
-## **TC-11 Невалидный ввод ширины (буквы)**
+## **TC-11 Проверка невалидных значений ввода ширины (буквы)**
 
 ***Priority***: P1
-***Automation***: YES
+***Automation***: [YES](/tests/TC-11_Invalid_width_input_letters.spec.ts)
 
 ***Steps***:
 

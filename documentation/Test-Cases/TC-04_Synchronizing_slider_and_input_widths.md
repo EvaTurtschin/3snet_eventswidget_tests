@@ -1,7 +1,7 @@
-## **TC-04 Синхронизация slider и input (ширина)**
+## **TC-04 Проверка синхронизация slider и ввода значения (ширина)**
 
 ***Priority***: P2
-***Automation***: Yes
+***Automation***: [Yes](/tests/TC-04_Synchronizing_slider_and_input_widths.spec.ts)
 
 ***Steps***:
 

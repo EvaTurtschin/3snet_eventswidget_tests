@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-10 Копирование кода', async ({ page }) => {
+test('TC-10 Проверка кнопки "Копирование кода"', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 
