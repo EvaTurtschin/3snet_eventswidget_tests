@@ -63,13 +63,13 @@
         <div class="table-container">
           <table id="testsTable" class="tests-table">
             <thead class="tests-table-head">
-      <tr>
-        <th class="col-testcase">Test Case</th>
-        <th class="col-status">Status</th>
-        <th class="col-time">Time</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
+              <tr>
+                <th class="col-testcase">Test Case</th>
+                <th class="col-status">Status</th>
+                <th class="col-time">Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
       </div>
@@ -132,7 +132,11 @@
         const tbody = document.querySelector("#testsTable tbody");
 
         if (!summaryEl || !resultsPanel || !tbody) {
-          console.error("❌ Элементы не найдены!");
+          console.error("❌ Элементы не найдены!", {
+            summaryEl,
+            resultsPanel,
+            tbody,
+          });
           return;
         }
 
@@ -161,7 +165,11 @@
       }
 
       function hideResults() {
-        resultsPanel.classList.add("hidden"); 
+        const resultsPanel = document.getElementById("resultsPanel");
+
+        if (resultsPanel) {
+          resultsPanel.classList.add("hidden");
+        }
 
         if (currentRun) {
           testHistory.unshift(currentRun);
@@ -231,12 +239,11 @@
       };
     </script>
     <div class="bean-image">
-    <img
-      src="Mr_Bean_Image.png"
-      alt="Mr Bean"
-      style="width: 150px; height: auto"
-    />
-  </div>
+      <img
+        src="Mr_Bean_Image.png"
+        alt="Mr Bean"
+        style="width: 150px; height: auto"
+      />
+    </div>
   </body>
-
 </html>

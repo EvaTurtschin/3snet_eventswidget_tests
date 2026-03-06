@@ -20,12 +20,12 @@ test('TC-02 Проверка изменение ширины превью чер
   await basePage.checkCodeTextareaVisible();
   // Получаем код iframe
   const iframeCode = await basePage.getIframeCode();
-  //сверяем данные
+  // Проверяем данные в коде iframe на соответствие введенному значению
   expect(iframeCode).toContain(`width="${randomWidth}"`);
   // Ждем загрузки превью
   await basePage.checkPreviewVisible();
   await basePage.waitForIframeAttached();
-  // Сверяем данные
+  // Проверяем данные в прьевью
   const width = await basePage.getIframeAttribute('width');
   expect(width).toBe(randomWidth.toString());
   

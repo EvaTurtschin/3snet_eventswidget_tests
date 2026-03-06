@@ -62,7 +62,7 @@ header {
   margin: 0 auto;
 }
 
-#resultsPanel {
+.results-panel {
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -77,7 +77,7 @@ header {
 }
 
 .results-panel.hidden {
-  display: none;
+  display: none !important;
 }
 
 .results-header {

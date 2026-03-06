@@ -6,7 +6,7 @@ test('TC-01 Генерация кода iframe и превью с дефолтн
   const basePage = new BasePage(page);
   await page.goto('');
   
-  // Не изменяя настройки, нажать "Сгенерировать превью"
+  // Не изменяя настройки, нажимаем на кнопку "Сгенерировать превью"
   const generateBtn = page.getByRole('button', { name: 'Сгенерировать превью' });
   await basePage.generatePreviewWithRetry(generateBtn);
 
@@ -14,7 +14,7 @@ test('TC-01 Генерация кода iframe и превью с дефолтн
 
   // Получаем данные кода iframe
   const iframeCode = await basePage.getIframeCode();
-  // Сверяем данные
+  // Проверяем данные кода iframe на сответствие дефолтным значениям
   expect(iframeCode).toContain('theme=turquoise');
   expect(iframeCode).toContain('width="230"');
   expect(iframeCode).toContain('height="240"');
@@ -23,7 +23,7 @@ test('TC-01 Генерация кода iframe и превью с дефолтн
   // Ждем генерации превью
   await basePage.checkPreviewVisible();
   await basePage.waitForIframeAttached();
-  // Сверяем данные
+  // Проверяем данные превью
   await expect(basePage.iframePreview).toHaveAttribute('src', /theme=turquoise/);
   await expect(basePage.iframePreview).toHaveAttribute('width', '230');
   await expect(basePage.iframePreview).toHaveAttribute('height', '240');
