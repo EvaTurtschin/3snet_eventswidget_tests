@@ -189,43 +189,42 @@ npm run app
 
 ## 🧪 Пример автоматизированного теста
 
-Ниже пример теста на синхронизацию slider и input (установка ширины виджета календаря мероприятий):
+Ниже пример теста на изменение ширины превью через поле ввода:
 
 ```ts
-test('TC-04 Синхронизация slider и input (ширина)', async ({ page }) => {
-await page.goto('');
+import { test, expect } from '@playwright/test';
+import BasePage from '@pages/BasePage';
 
-  const widthRange = page.locator('input[id="width-range"]');
-  const widthInput = page.locator('input[name="width"]');
+test('TC-02 Проверка изменение ширины превью через input', async ({ page }) => {
+  const basePage = new BasePage(page);
+  await page.goto('');
 
-  const min = 230;
-  const max = 1020;
-  const step = 10;
+  // Генерируем случайную ширину от 230 до 1020
+  const randomWidth = Math.floor(Math.random() * (1020 - 230 + 1)) + 230;
 
-  // ===== Проверка slider → input =====
-  const sliderValue = Math.floor(Math.random() * ((max - min) / step + 1)) * step + min;
+  // Клик на поле ввода ширины
+  const widthInput = await page.locator('input[name="width"]');
+  await widthInput.click();
+  await widthInput.fill(randomWidth.toString());
+  
+  // Нажимаем кнопку 'Сгенерировать превью'
+  const generateBtn = page.getByRole('button', { name: 'Сгенерировать превью' });
+  await basePage.generatePreviewWithRetry(generateBtn);
+  await basePage.checkCodeTextareaVisible();
 
-  // slider округляет значение
-  await widthRange.evaluate((el, value) => {
-    (el as HTMLInputElement).value = value.toString();
-    el.dispatchEvent(new Event('input'));
-    el.dispatchEvent(new Event('change'));
-  }, sliderValue);
+  // Получаем код iframe
+  const iframeCode = await basePage.getIframeCode();
 
-  await expect(widthInput).toHaveValue(sliderValue.toString());
-
-  // ===== Проверка input → slider =====
-  const inputValue = Math.floor(Math.random() * ((max - min) / step + 1)) * step + min;
-
-  await widthInput.fill(inputValue.toString());
-  await widthInput.press('Enter');
-
-  // slider округляет значение
-  const expectedSliderValue = Math.round(inputValue / step) * step;
-
-  await expect(widthRange).toHaveValue(expectedSliderValue.toString());
-
-  await expect(widthInput).toHaveValue(expectedSliderValue.toString());
+  // Cверяем данные
+  expect(iframeCode).toContain(`width="${randomWidth}"`);
+  
+  // Ждем загрузки превью
+  await basePage.checkPreviewVisible();
+  await basePage.waitForIframeAttached();
+  
+  // Сверяем данные
+  const width = await basePage.getIframeAttribute('width');
+  expect(width).toBe(randomWidth.toString());
 });
 ```
 ## 📌 Примечания
