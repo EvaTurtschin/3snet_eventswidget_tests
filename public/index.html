@@ -1,205 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Run 3snet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-logo">
-           <svg width="103" height="51" viewBox="0 0 103 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8428 38.8257H19.5229C22.2484 38.8257 23.6902 39.1516 23.8482 39.8033C23.8548 39.8436 23.858 39.8839 23.858 39.9243V43.25C23.858 43.297 23.8548 43.3407 23.8482 43.381C23.6902 44.0327 22.2484 44.3586 19.5229 44.3586H10.8428C8.12385 44.3586 6.6821 44.0327 6.51751 43.381C6.51093 43.3407 6.50764 43.297 6.50764 43.25V39.9243H0V43.25C0 44.9498 0.388417 46.3708 1.16525 47.513C2.76501 49.8377 5.99084 51 10.8428 51H19.5229C24.3748 51 27.6007 49.8377 29.2004 47.513C29.9839 46.3708 30.3756 44.9498 30.3756 43.25V39.9243C30.3756 38.2379 29.9839 36.8269 29.2004 35.6915C29.1609 35.6243 29.1181 35.5605 29.0721 35.5C29.1181 35.4395 29.1609 35.3791 29.2004 35.3186C29.9839 34.1764 30.3756 32.7621 30.3756 31.0757V27.75C30.3756 26.0502 29.9839 24.6292 29.2004 23.487C27.6007 21.1623 24.3748 20 19.5229 20H10.8428C5.99084 20 2.76501 21.1623 1.16525 23.487C0.388417 24.6292 0 26.0502 0 27.75V31.0757H6.50764V27.75C6.50764 27.7097 6.51093 27.666 6.51751 27.619C6.6821 26.9673 8.12385 26.6414 10.8428 26.6414H19.5229C22.2484 26.6414 23.6902 26.9673 23.8482 27.619C23.8548 27.666 23.858 27.7097 23.858 27.75V31.0757C23.858 31.1161 23.8548 31.1564 23.8482 31.1967C23.6902 31.8484 22.2484 32.1743 19.5229 32.1743H10.8428V38.8257ZM62.8348 23.487C61.235 21.1623 58.0092 20 53.1572 20H44.4771C39.6252 20 36.3993 21.1623 34.7996 23.487C34.0162 24.6292 33.6244 26.0502 33.6244 27.75V31.0757C33.6244 32.7689 34.0162 34.1865 34.7996 35.3287C36.3993 37.6601 39.6252 38.8257 44.4771 38.8257H53.1572C55.8762 38.8257 57.3179 39.1516 57.4825 39.8033C57.4891 39.8436 57.4924 39.8839 57.4924 39.9243V43.25C57.4924 43.297 57.4891 43.3407 57.4825 43.381C57.3179 44.0327 55.8762 44.3586 53.1572 44.3586H44.4771C41.7516 44.3586 40.3098 44.0327 40.1518 43.381C40.1387 43.3407 40.1321 43.297 40.1321 43.25V42.1414H33.6244V43.25C33.6244 44.9498 34.0162 46.3708 34.7996 47.513C36.3993 49.8377 39.6252 51 44.4771 51H53.1572C58.0092 51 61.235 49.8377 62.8348 47.513C63.6116 46.3708 64 44.9498 64 43.25V39.9243C64 38.2311 63.6116 36.8135 62.8348 35.6713C61.235 33.3399 58.0092 32.1743 53.1572 32.1743H44.4771C41.7516 32.1743 40.3098 31.8484 40.1518 31.1967C40.1387 31.1564 40.1321 31.1161 40.1321 31.0757V27.75C40.1321 27.7097 40.1387 27.666 40.1518 27.619C40.3098 26.9673 41.7516 26.6414 44.4771 26.6414H53.1572C55.8762 26.6414 57.3179 26.9673 57.4825 27.619C57.4891 27.666 57.4924 27.7097 57.4924 27.75V28.8586H64V27.75C64 26.0502 63.6116 24.6292 62.8348 23.487Z" fill="#40F3F7"></path>
-               <path fill-rule="evenodd" clip-rule="evenodd" d="M68 44.4375V50.9994H74.7979V44.4375H68Z" fill="white"></path>
-            </svg>
-        </div>
-        <nav class="header-nav">
-            <ul class="nav-menu">
-                <li><button id="runBtn" onclick="runTests()">Запуск Теста</button></li>
-                <li><button id="reportBtn" onclick="window.open('/report/index.html', '_blank')">Подробный Playwright Отчет</button></li>
-            </ul>
-        </nav>
-        
+      <div class="header-logo">
+        <svg
+          width="103"
+          height="51"
+          viewBox="0 0 103 51"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10.8428 38.8257H19.5229C22.2484 38.8257 23.6902 39.1516 23.8482 39.8033C23.8548 39.8436 23.858 39.8839 23.858 39.9243V43.25C23.858 43.297 23.8548 43.3407 23.8482 43.381C23.6902 44.0327 22.2484 44.3586 19.5229 44.3586H10.8428C8.12385 44.3586 6.6821 44.0327 6.51751 43.381C6.51093 43.3407 6.50764 43.297 6.50764 43.25V39.9243H0V43.25C0 44.9498 0.388417 46.3708 1.16525 47.513C2.76501 49.8377 5.99084 51 10.8428 51H19.5229C24.3748 51 27.6007 49.8377 29.2004 47.513C29.9839 46.3708 30.3756 44.9498 30.3756 43.25V39.9243C30.3756 38.2379 29.9839 36.8269 29.2004 35.6915C29.1609 35.6243 29.1181 35.5605 29.0721 35.5C29.1181 35.4395 29.1609 35.3791 29.2004 35.3186C29.9839 34.1764 30.3756 32.7621 30.3756 31.0757V27.75C30.3756 26.0502 29.9839 24.6292 29.2004 23.487C27.6007 21.1623 24.3748 20 19.5229 20H10.8428C5.99084 20 2.76501 21.1623 1.16525 23.487C0.388417 24.6292 0 26.0502 0 27.75V31.0757H6.50764V27.75C6.50764 27.7097 6.51093 27.666 6.51751 27.619C6.6821 26.9673 8.12385 26.6414 10.8428 26.6414H19.5229C22.2484 26.6414 23.6902 26.9673 23.8482 27.619C23.8548 27.666 23.858 27.7097 23.858 27.75V31.0757C23.858 31.1161 23.8548 31.1564 23.8482 31.1967C23.6902 31.8484 22.2484 32.1743 19.5229 32.1743H10.8428V38.8257ZM62.8348 23.487C61.235 21.1623 58.0092 20 53.1572 20H44.4771C39.6252 20 36.3993 21.1623 34.7996 23.487C34.0162 24.6292 33.6244 26.0502 33.6244 27.75V31.0757C33.6244 32.7689 34.0162 34.1865 34.7996 35.3287C36.3993 37.6601 39.6252 38.8257 44.4771 38.8257H53.1572C55.8762 38.8257 57.3179 39.1516 57.4825 39.8033C57.4891 39.8436 57.4924 39.8839 57.4924 39.9243V43.25C57.4924 43.297 57.4891 43.3407 57.4825 43.381C57.3179 44.0327 55.8762 44.3586 53.1572 44.3586H44.4771C41.7516 44.3586 40.3098 44.0327 40.1518 43.381C40.1387 43.3407 40.1321 43.297 40.1321 43.25V42.1414H33.6244V43.25C33.6244 44.9498 34.0162 46.3708 34.7996 47.513C36.3993 49.8377 39.6252 51 44.4771 51H53.1572C58.0092 51 61.235 49.8377 62.8348 47.513C63.6116 46.3708 64 44.9498 64 43.25V39.9243C64 38.2311 63.6116 36.8135 62.8348 35.6713C61.235 33.3399 58.0092 32.1743 53.1572 32.1743H44.4771C41.7516 32.1743 40.3098 31.8484 40.1518 31.1967C40.1387 31.1564 40.1321 31.1161 40.1321 31.0757V27.75C40.1321 27.7097 40.1387 27.666 40.1518 27.619C40.3098 26.9673 41.7516 26.6414 44.4771 26.6414H53.1572C55.8762 26.6414 57.3179 26.9673 57.4825 27.619C57.4891 27.666 57.4924 27.7097 57.4924 27.75V28.8586H64V27.75C64 26.0502 63.6116 24.6292 62.8348 23.487Z"
+            fill="#40F3F7"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M68 44.4375V50.9994H74.7979V44.4375H68Z"
+            fill="white"
+          ></path>
+        </svg>
+      </div>
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li>
+            <button id="runBtn" onclick="runTests()">Запуск Теста</button>
+          </li>
+          <li>
+            <button
+              id="reportBtn"
+              onclick="window.open('/report/index.html', '_blank')"
+            >
+              Подробный Playwright Отчет
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-<main class="main-content">
-    <div id="resultsPanel" class="results-panel hidden">
-      <div class="results-header">
-        <div class="header-content">
-          <h3 id="summary" class="summary-title"></h3>
-          <button class="close-btn" onclick="hideResults()">✕</button>
+    <main class="main-content">
+      <div id="resultsPanel" class="results-panel hidden">
+        <div class="results-header">
+          <div class="header-content">
+            <h3 id="summary" class="summary-title"></h3>
+            <button class="close-btn" onclick="hideResults()">✕</button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table id="testsTable" class="tests-table">
+            <thead class="tests-table-head">
+      <tr>
+        <th class="col-testcase">Test Case</th>
+        <th class="col-status">Status</th>
+        <th class="col-time">Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+          </table>
         </div>
       </div>
-      
-      <div class="table-container">
-        <table id="testsTable" class="tests-table">
+
+      <!-- ТАБЛИЦА ИСТОРИИ ЗАПУСКОВ -->
+      <div id="historyPanel" class="history-panel">
+        <h2 class="history-title">История запусков</h2>
+        <table id="historyTable" class="history-table">
+          <thead class="history-table-head">
+            <tr>
+              <th class="col-date">Дата запуска</th>
+              <th class="col-result">Результат</th>
+              <th class="col-actions">Действия</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <!-- Заполняется JS -->
+          </tbody>
         </table>
       </div>
-    </div>
+    </main>
 
-    <!-- ТАБЛИЦА ИСТОРИИ ЗАПУСКОВ -->
-    <div id="historyPanel" class="history-panel">
-         <h2 class="history-title">История запусков</h2>
-    <table id="historyTable" class="history-table">
-        <thead class="history-table-head">
-            <tr>
-                <th class="col-date">Дата запуска</th>
-                <th class="col-result">Результат</th>
-                <th class="col-actions">Действия</th>
-            </tr>
-        </thead>
-        <tbody id="historyBody">
-            <!-- Заполняется JS -->
-        </tbody>
-    </table>
-    </div> 
-  </main>
-           
-<script>
+    <script>
+      let testHistory = [];
+      let currentRun = null;
 
-let testHistory = [];
-let currentRun = null;
+      // Запуск тестов
+      async function runTests() {
+        const btn = document.getElementById("runBtn");
+        btn.disabled = true;
+        btn.innerText = "Тестирую...";
 
-// Запуск тестов 
-async function runTests() {
-    const btn = document.getElementById('runBtn');
-    btn.disabled = true;
-    btn.innerText = 'Тестирую...';
+        try {
+          const res = await fetch("/run-tests");
+          const result = await res.json();
 
-    try {
-        const res = await fetch('/run-tests');
-        const result = await res.json();
-
-        currentRun = {
+          currentRun = {
             timestamp: result.timestamp,
-            date: new Date(result.timestamp).toLocaleString('ru-RU'),
+            date: new Date(result.timestamp).toLocaleString("ru-RU"),
             status: result.status,
             passed: result.summary.passed,
-            total: result.summary.total
-        };
+            total: result.summary.total,
+          };
 
-        btn.innerText = 'Запуск Теста';
-        btn.disabled = false;
+          btn.innerText = "Запуск Теста";
+          btn.disabled = false;
 
-        showResults(result);
-        
-    } catch (e) {
-        btn.innerText = 'Запуск Теста';
-        btn.disabled = false;
-        alert('Error: ' + e.message);
-    }
-}
+          showResults(result);
+        } catch (e) {
+          btn.innerText = "Запуск Теста";
+          btn.disabled = false;
+          alert("Error: " + e.message);
+        }
+      }
 
-//  Детальная таблица результатов 
-function showResults(result) {
-    const passed = result.summary.passed;
-    const total = result.summary.total;
-    const statusEmoji = result.status === 'PASSED' ? '✅' : '❌';
-    
-    document.getElementById('summary').innerHTML = 
-        `${statusEmoji} <strong>${result.status}</strong> (${passed}/${total})`;
-    
-    const tbody = document.querySelector('#testsTable tbody');
-    tbody.innerHTML = result.tests.map((test, index) => `
-        <tr style="border-bottom:1px solid #f1f5f9;">
-            <td style="padding:14px 12px 14px 20px; max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
-                ${test.title}
-            </td>
-            <td style="padding:14px 12px; text-align:center;">
-                <span style="
-                    padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;
-                    ${test.status === 'passed' ? 
-                        'background:#d1fae5; color:#065f46' : 
-                        'background:#fee2e2; color:#991b1b'
-                    }
-                ">${test.status.toUpperCase()}</span>
-            </td>
-            <td style="padding:14px 12px; text-align:right; color:#6b7280; font-family:monospace;">
-                ${Math.round(test.duration/1000)}s
-            </td>
-        </tr>
-    `).join('');
-    
-    document.getElementById('resultsPanel').style.display = 'block';
-   
-}
+      //  Детальная таблица результатов
+      function showResults(result) {
+        const summaryEl = document.getElementById("summary");
+        const resultsPanel = document.getElementById("resultsPanel");
+        const tbody = document.querySelector("#testsTable tbody");
 
-function hideResults() {
-    document.getElementById('resultsPanel').style.display = 'none';
-    
-    if (currentRun) {
-        testHistory.unshift(currentRun);
-        if (testHistory.length > 10) testHistory = testHistory.slice(0, 10);
-        updateHistoryTable();
-        currentRun = null;  
-    }
-}
+        if (!summaryEl || !resultsPanel || !tbody) {
+          console.error("❌ Элементы не найдены!");
+          return;
+        }
 
+        const passed = result.summary.passed;
+        const total = result.summary.total;
+        const statusEmoji = result.status === "PASSED" ? "✅" : "❌";
+        summaryEl.innerHTML = `${statusEmoji} <strong>${result.status}</strong> (${passed}/${total})`;
 
-function updateHistoryTable() {
-    const tbody = document.getElementById('historyBody');
-    
-    const recentHistory = testHistory.slice(0, 10);
-    tbody.innerHTML = recentHistory.map((run, index) => `
-        <tr style="border-bottom: 1px solid #e5e7eb;">
-            <td style="padding: 16px 15px; font-size: 15px; color: #e5e7eb;">
-                ${run.date}
-            </td>
-            <td style="padding: 16px 15px; text-align: center;">
-                <span style="
-                    padding: 8px 16px; border-radius: 25px; font-weight: 600; font-size: 14px;
-                    ${run.status === 'PASSED' ? 
-                        'background: #d1fae5; color: #065f46' : 
-                        'background: #fee2e2; color: #991b1b'
-                    }
-                ">
-                    ${run.passed}/${run.total}
-                </span>
-            </td>
-            <td style="padding: 16px 15px; text-align: center;">
-                <button onclick="showDetails(${index})" style="
-                    background: #3b82f6; color: white; border: none; 
-                    padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px;
-                ">Подробно</button>
-            </td>
-        </tr>
-    `).join('') || '<tr><td colspan="3" style="padding: 40px; text-align: center; color: #9ca3af;">Нет запусков</td></tr>';
-}
+        tbody.innerHTML = result.tests
+          .map(
+            (test) => `
+    <tr class="test-row">
+      <td class="test-title">${test.title}</td>
+      <td class="col-status">
+        <span class="status-badge ${test.status === "passed" ? "status-passed" : "status-failed"}">
+          ${test.status.toUpperCase()}
+        </span>
+      </td>
+      <td class="test-duration">${Math.round(test.duration / 1000)}s</td>
+    </tr>
+  `,
+          )
+          .join("");
 
-function showDetails(index) {
-    const run = testHistory[index];
-    alert(`Запуск ${run.date}\n${run.passed}/${run.total} тестов (${run.status})`); 
-}
+        resultsPanel.classList.remove("hidden");
+      }
 
-function openReport() {
-    window.open('/report/index.html', '_blank');
-    hideResults();
-}
+      function hideResults() {
+        resultsPanel.classList.add("hidden"); 
 
-window.onload = function() {
-    fetch('/history')
-        .then(res => res.json())
-        .then(history => {
-            testHistory = history.map(run => ({
-                timestamp: run.timestamp,
-                date: new Date(run.timestamp).toLocaleString('ru-RU'),
-                status: run.status,
-                passed: run.summary.passed,
-                total: run.summary.total
+        if (currentRun) {
+          testHistory.unshift(currentRun);
+          if (testHistory.length > 10) testHistory = testHistory.slice(0, 10);
+          updateHistoryTable();
+          currentRun = null;
+        }
+      }
+
+      function updateHistoryTable() {
+        const tbody = document.getElementById("historyBody");
+        if (!tbody) return;
+
+        const recentHistory = testHistory.slice(0, 10);
+        tbody.innerHTML =
+          recentHistory
+            .map(
+              (run, index) => `
+    <tr class="history-row">
+      <td class="history-date">${run.date}</td>
+      <td class="col-result">
+        <span class="history-badge ${run.status === "PASSED" ? "history-passed" : "history-failed"}">
+          ${run.passed}/${run.total}
+        </span>
+      </td>
+      <td class="col-actions">
+        <button class="history-btn" onclick="showDetails(${index})">
+          Подробно
+        </button>
+      </td>
+    </tr>
+  `,
+            )
+            .join("") ||
+          '<tr><td colspan="3" class="no-history">Нет запусков</td></tr>';
+      }
+
+      function showDetails(index) {
+        const run = testHistory[index];
+        alert(
+          `Запуск ${run.date}\n${run.passed}/${run.total} тестов (${run.status})`,
+        );
+      }
+
+      function openReport() {
+        window.open("/report/index.html", "_blank");
+        hideResults();
+      }
+
+      window.onload = function () {
+        fetch("/history")
+          .then((res) => res.json())
+          .then((history) => {
+            testHistory = history.map((run) => ({
+              timestamp: run.timestamp,
+              date: new Date(run.timestamp).toLocaleString("ru-RU"),
+              status: run.status,
+              passed: run.summary.passed,
+              total: run.summary.total,
             }));
             updateHistoryTable();
-        })
-        .catch(() => {
-            console.log('История пуста или недоступна');
-            updateHistoryTable();  
-        });
-};
-</script>
-</script>
-</body>
+          })
+          .catch(() => {
+            console.log("История пуста или недоступна");
+            updateHistoryTable();
+          });
+      };
+    </script>
     <div class="bean-image">
-        <img src="Mr_Bean_Image.png" alt="Mr Bean" style="width: 150px; height: auto;">
-    </div>
+    <img
+      src="Mr_Bean_Image.png"
+      alt="Mr Bean"
+      style="width: 150px; height: auto"
+    />
+  </div>
+  </body>
+
 </html>

@@ -1,6 +1,6 @@
 ## **TC-15 Активированная radio-button "на всю ширину контейнера" перезаписывает предыдущий ввод значений ширины блока**
 
-***Priority***: P1
+***Priority***: P2
 ***Automation***: [YES](/tests/TC-15_Full-width_radio%20_button_overwrites_width_input.spec.ts)
 
 ***Steps***:

@@ -63,7 +63,6 @@ header {
 }
 
 #resultsPanel {
-  display: none;
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -74,6 +73,7 @@ header {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   z-index: 999;
   overflow: hidden;
+  display: block;
 }
 
 .results-panel.hidden {
@@ -90,7 +90,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px; 
+  gap: 15px;
 }
 
 .summary-title {
@@ -254,6 +254,107 @@ header {
   .summary-title {
     font-size: 18px;
   }
+}
+
+.test-row {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.test-row:hover {
+  background-color: #f8fafc;
+}
+
+.test-title {
+  padding: 14px 12px 14px 20px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-passed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.test-duration {
+  padding: 14px 12px;
+  text-align: right;
+  color: #6b7280;
+  font-family: "SF Mono", Monaco, "Roboto Mono", monospace;
+}
+
+.history-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.history-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.history-date {
+  padding: 16px 15px;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.history-badge {
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.history-passed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.history-failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.history-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.history-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.history-btn:active {
+  transform: translateY(0);
+}
+
+.no-history {
+  padding: 40px;
+  text-align: center;
+  color: #9ca3af;
 }
 
 .bean-image {
