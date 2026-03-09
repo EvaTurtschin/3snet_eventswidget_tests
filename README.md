@@ -19,10 +19,10 @@
 >│                                                
 >├─ documentation                                         
 >│    ├─ project task.md                                                                       
->│    ├─ bug-reports.md                                                                       
->│    └─ Test-Cases                                                                
->│       ├─ TC-01_.md                                
->│       └─...                                   
+>│    ├─ bug-reports.md                                                                     
+>│    └─ Test-Cases                                                                                           
+>│        ├─ TC-01_.md                                                                           
+>│        └─...                                                           
 >│                                                
 >├─ Pages/ # Page Object классы                                                
 >│    └─ BasePage.ts           ← Локаторы и базовые методы для взаимодействия с элементами страницы                         
@@ -39,7 +39,7 @@
 >│    └─ server.js              Сервер + UI + парсер JSON отчетов Playwright                            
 >│                                              
 >├─ public/                    ← HTML/JS интерфейс                             
->│    ├─ index.html             Главная страница с кнопкой "Запуск Теста"
+>│    ├─ index.html             Главная страница с кнопкой "Запуск Теста"                                              
 >│    └─ styles.css             Стили страницы интерфейса                     
 >│                                                                                              
 >├─ test-history.json          ← Постоянная история запусков >                                  
