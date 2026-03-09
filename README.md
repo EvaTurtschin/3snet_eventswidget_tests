@@ -20,9 +20,9 @@
 >├─ documentation                                         
 >│    ├─ project task.md                                                                       
 >│    ├─ bug-reports.md                                                                     
->│    └─ Test-Cases                                                                                           
->│        ├─ TC-01_.md                                                                           
->│        └─...                                                           
+>│    └─ Test-Cases                                                                                        
+>│       ├─ TC-01_.md                                                                           
+>│       └─...                                                           
 >│                                                
 >├─ Pages/ # Page Object классы                                                
 >│    └─ BasePage.ts           ← Локаторы и базовые методы для взаимодействия с элементами страницы                         
