@@ -21,8 +21,8 @@ Test cases and bug reports are maintained separately from automated tests and re
 >│    ├─ project task.md                                                                       
 >│    ├─ bug-reports.md                                                                     
 >│    └─ Test-Cases                                                                                        
->│       ├─ TC-01_.md                                                                           
->│       └─...                                                           
+>│           ├─ TC-01_.md                                                                           
+>│           └─...                                                           
 >│                                                
 >├─ Pages/ # Page Object Classes                                                
 >│    └─ BasePage.ts                                    
@@ -34,7 +34,6 @@ Test cases and bug reports are maintained separately from automated tests and re
 >├─ tests/ # Tests (Playwright)                                     
 >│    ├─ TC-01_.spec.ts                                
 >│    ├─ TC-02_.spec.ts                             
->│    ├─                                         
 >│    └─...                                  
 >│                                                   
 >├─ server/                    ← NEW! Test management web interface                                    
