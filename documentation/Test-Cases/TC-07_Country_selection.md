@@ -1,18 +1,18 @@
-## **TC-07 Проверка выбора страны** (Ограничен реализацией вариантов выбора)
+## **TC-07 Country Selection Check** (Limited by implementation of selection options)
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-07_Country_selection.spec.ts)
 
 ***Steps***:
 
-1. Выбрать страны
+1. Select countries
 
-2. Выбрать все
+2. Select all
 
-3. Нажать кнопку "Сгенерировать превью"
+3. Click the "Generate Preview" button
 
 ***Expected result***:
 
-- В src присутствует параметр event_country=on
+- The src contains the parameter event_country=on
 
-- Значение корректно передано
+- The value is correctly transmitted

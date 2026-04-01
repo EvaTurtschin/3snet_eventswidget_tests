@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
 
-test('TC-13 Проверка генерации превью при максимальной нагрузке < 2сек', async ({ page }) => {
+test('TC-13 Checking preview generation at maximum load < 2sec', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 
@@ -11,15 +11,15 @@ test('TC-13 Проверка генерации превью при максим
 
   const allTopics = page.locator(`//div[@class="checkselect" and .//option[text()="Выбрать тематику"]]//span[text()="Выбрать все"]`);
   await allTopics.click();
-  //Закрываем выпадающий список
+  //Close the dropdown list
   await topicSelector.click();
 
   const countrySelector = page.locator('div[data-select="Все страны"]');
   await countrySelector.click();
 
-  const allCountries = await page.locator('//div[@class="checkselect" and .//option[text()="Все страны"]]//span[text()="Выбрать все"]');
+  const allCountries = page.locator('//div[@class="checkselect" and @data-select="Все страны"]//span[text()="Выбрать все"]'); 
   await allCountries.click();
-  //Закрываем выпадающий список
+  //Close the dropdown list
   await countrySelector.click();
 
   const widthInput = page.locator('input[name="width"]');
@@ -43,13 +43,13 @@ test('TC-13 Проверка генерации превью при максим
 
   const generateBtn = page.getByRole('button', { name: 'Сгенерировать превью' });
   
-   // Измеряем время
+   // Measure time
   const start = Date.now();
   await basePage.generatePreviewWithRetry(generateBtn);
   const end = Date.now();
   
   const generationTime = (end - start) / 1000;
-  expect(generationTime).toBeLessThan(2.0); // < 2 сек
+  expect(generationTime).toBeLessThan(2.0); // < 2 sec
   
   console.log(`⏱️ Generation time in TC-13: ${generationTime}s`);
 

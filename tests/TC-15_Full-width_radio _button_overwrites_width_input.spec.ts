@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-15 Активированная radio-button "на всю ширину контейнера" перезаписывает предыдущий ввод значений ширины блока"', async ({ page }) => {
+test('TC-15 Activated "full-width" radio button overwrites previous width input"', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 
-  // Генерируем случайную ширину от 230 до 1020
+  // Generate a random width from 230 to 1020
   const randomWidth = Math.floor(Math.random() * (1020 - 230 + 1)) + 230;
 
   const widthInput = await page.locator('input[name="width"]');

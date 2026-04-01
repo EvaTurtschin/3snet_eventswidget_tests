@@ -1,14 +1,14 @@
-## **TC-10 Проверка кнопки "Копирование кода"**
+## **TC-10 Checking the "Copy Code" button**
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-10_Copying_code.spec.ts)
 
 ***Steps***:
 
-1. Нажать "Сгенерировать превью"
+1. Click "Generate Preview"
 
-2. Нажать "Скопировать код"
+2. Click "Copy Code"
 
 ***Expected result***:
 
-- Текст кнопки сменился на "Скопировано"
+- The button text changed to "Copied".

@@ -1,16 +1,16 @@
-## **TC-02 Проверка изменение ширины превью через input**
+## **TC-02 Checking width change of preview through input**
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-02_Changing_width_through_input.spec.ts)
 
 ***Steps***:
 
-1. Ввести новое валидное значение ширины (значения от 230 до 1020)
+1. Enter a new valid width value (values from 230 to 1020)
 
-2. Нажать "Сгенерировать превью"
+2. Click "Generate Preview"
 
 ***Expected result***:
 
-- width обновлён в коде iframe
+- width is updated in the iframe code
 
-- width превью соответствует введённому значению
+- preview width matches the entered value

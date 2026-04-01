@@ -1,16 +1,16 @@
-## **TC-11 Проверка невалидных значений ввода ширины (буквы)**
+## **TC-11 Checking invalid width input values (letters)**
 
 ***Priority***: P1
 ***Automation***: [YES](/tests/TC-11_Invalid_width_input_letters.spec.ts)
 
 ***Steps***:
 
-1. Ввести в поле ввода ширины буквенные значения "oiuzcftz"
+1. Enter letter values "oiuzcftz" in the width input field
 
-2. Сгенерировать код
+2. Generate code
 
 ***Expected result***:
 
-- Поле ввода автоматически возвращает ширину к дефолтному значению 230.
+- The input field automatically returns the width to the default value of 230.
 
-- iframe и превью корректно обновляются
+- iframe and preview are correctly updated

@@ -1,26 +1,26 @@
-## **TC-01 Генерация кода iframe и превью с дефолтными значениями**
+## **TC-01 Generation of iframe code and preview with default values**
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-01_Generation_with_default_data.spec.ts)
 
-***Preconditions***: Страница загружена
+***Preconditions***: Page is loaded
 
 ***Steps***:
 
-1. Не изменяя настройки, нажать "Сгенерировать превью"
+1. Without changing settings, click "Generate Preview"
 
 ***Expected result***:
 
-превью и код iframe отображается
+preview and iframe code are displayed
 
-***В сгенерированном коде***:
+***In the generated code***:
 
-- присутствует id
+- id is present
 
-- корректный src
+- correct src
 
-- width соответствует значению по умолчанию
+- width matches the default value
 
-- height соответствует значению по умолчанию
+- height matches the default value
 
 - frameborder="0"

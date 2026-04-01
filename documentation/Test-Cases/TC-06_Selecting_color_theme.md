@@ -1,16 +1,15 @@
-## **TC-06 Проверка выбора цветовой темы для генерации превью**
+## **TC-06 Check selecting color theme for preview generation**
 
-***Priority***: P1
+***Priority***: P1  
 ***Automation***: [Yes](/tests/TC-06_Selecting_color_theme.spec.ts)
 
 ***Steps***:
 
-1. Выбрать цветовую тему (не дефолт- turquoise)
+1. Select a color theme (non-default, turquoise)
 
-2. Нажать кнопку "Сгенерировать превью"
+2. Click "Generate preview"
 
 ***Expected result***:
 
-- В src обновлён параметр theme и он соответствует выбору
-
-- превью перезагружается с новой темой
+- In src, the theme parameter is updated and matches the selection  
+- preview reloads with new theme

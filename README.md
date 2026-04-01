@@ -1,19 +1,19 @@
 # 3snet Calendar Widget Automation
 
-Автоматизация тестирования [страницы генерации iframe-кода для виджета календаря мероприятий.](https://dev.3snet.info/eventswidget/)
+Automation testing of the [iframe code generation page for the event calendar widget.](https://dev.3snet.info/eventswidget/)
 
 
-## 📚 Документация проекта
+## 📚 Project Documentation
 
-В репозитории присутствуют следующие артефакты:
+The repository contains the following artifacts:
 
-- **Текст тестового задания** — исходное описание требований.
-- **Test Cases** — перечень тест-кейсов с приоритетами и описанием шагов.
-- **Bug Reports** — предусмотрено для зафиксированных дефектов (если будут выявлены в ходе тестирования).
+- **Project Task Text** — original description of requirements.
+- **Test Cases** — list of test cases with priorities and step descriptions.
+- **Bug Reports** — intended for recorded defects (if any are found during testing).
 
-Тест-кейсы и баг-репорты оформлены отдельно от автоматизированных тестов и отражают полный объём анализа функциональности.
+Test cases and bug reports are maintained separately from automated tests and reflect a full analysis of functionality.
 
-## 📂 Структура проекта
+## 📂 Project Structure
 
 >3snet_eventswidget_tests/                                           
 >│                                                
@@ -26,90 +26,90 @@
 >│       ├─                                              
 >│       └─...                                   
 >│                                                
->├─ Pages/ # Page Object классы                                                
+>├─ Pages/ # Page Object Classes                                                
 >│    └─ BasePage.ts                                    
 >│                                                 
->├─ TestData/ # Тестовые данные и фикстуры                        
+>├─ TestData/ # Test data and fixtures                        
 >│    ├─ csvReader.ts                                                                       
 >│    └─ topics.csv                                                                
 >│                                                
->├─ tests/ # Тесты (Playwright)                                     
+>├─ tests/ # Tests (Playwright)                                     
 >│    ├─ TC-01_.spec.ts                                
 >│    ├─ TC-02_.spec.ts                             
 >│    ├─                                         
 >│    └─...                                  
 >│                                                   
->├─ server/                    ← НОВОЕ! Веб-интерфейс управления тестами                                    
->│    └─ server.js              Сервер + UI + парсер JSON отчетов Playwright                            
+>├─ server/                    ← NEW! Test management web interface                                    
+>│    └─ server.js              Server + UI + Playwright JSON report parser                            
 >│                                              
->├─ public/                    ← НОВОЕ! HTML/JS интерфейс                             
->│    └─ index.html             Главная страница с кнопкой "Запуск Теста"                                      
+>├─ public/                    ← NEW! HTML/JS interface                             
+>│    └─ index.html             Main page with "Run Test" button                                      
 >│                                                                                              
->├─ test-history.json          ← НОВОЕ! Постоянная история запусков (50 записей)>                                  
+>├─ test-history.json          ← NEW! Persistent run history (50 entries)>                                  
 >│                                                                         
 >├─ fixtures                                                             
 >│    └─pomFixtures.ts                                                              
 >├─ .gitignore                                                             
->├─ playwright.config.ts # Конфигурация Playwright                                                            
+>├─ playwright.config.ts # Playwright configuration                                                            
 >├─ package.json                                                         
 >├─ tsconfig.json                                                            
 >└─ README.md                                                                                 
 
-- **Тесты** в `tests/` — отдельный файл на каждый тест-кейс.
-- **Page Object** реализован в `BasePage.ts`, содержит локаторы и базовые методы для взаимодействия с элементами страницы.
-- **TestData/** содержит все значения и фикстуры, используемые в тестах.
+- **Tests** in `tests/` — separate file for each test case.
+- **Page Object** is implemented in `BasePage.ts`, containing locators and base methods for interacting with page elements.
+- **TestData/** contains all values and fixtures used in the tests.
 
-## ⚙️ Установка
+## ⚙️ Installation
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
 
 ```bash
 git clone <URL_REPO>
 cd 3snet_eventswidget_tests
 ```
 
-2. Установите зависимости:
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Убедитесь, что Playwright браузеры установлены:
+3. Ensure Playwright browsers are installed:
 
 ```bash
 npx playwright install
 ```
 
-## 🚀 Запуск тестов
+## 🚀 Running Tests
 
--  Запуск всех тестов:
+-  Running all tests:
 
 ```bash
 npx playwright test
 ```
 
--  Запуск конкретного теста:
+-  Running a specific test:
 
 ```bash
 npx playwright test tests/TC-04_Synchronizing_slider_and_input_widths.spec.ts
 ```
 
-## 🚀 Запуск тестов с отчетом в консоли:
+## 🚀 Running Tests with Report in Console:
 
 ```bash
 npx playwright test --reporter=list
 ```
 
-- Запустить веб-интерфейс
+- Run the web interface
 
-    - Вариант A : Прямой запуск (рекомендуется для разработки)
+    - Variant A : Direct launch (recommended for development)
 
 
 ```bash
 node server/server.js
 ```
 - 
-    - Вариант B: Через npm скрипты (удобно для продакшена)
+    - Variant B: Through npm scripts (convenient for production)
 
 ```bash
 npm run app
@@ -117,127 +117,103 @@ npm run app
 
   - Open in browser:  ***[Browser Link](http://localhost:3000)***
 
-- #### *Функции веб-интерфейса:*
+- #### *Web Interface Features:*
 ```bash
-Кнопка "Запуск Теста" → результаты в таблице + история запусков
+"Run Test" button → results in a table + run history
 ```
 
-## 📝 Техническое описание проекта
+## 📝 Technical Description of the Project
 
-- Фреймворк: Playwright + TypeScript
+- Framework: Playwright + TypeScript
 
-- Архитектура: Page Object Model (POM) с retry logic
+- Architecture: Page Object Model (POM) with retry logic.
 
-- CI/CD: Возможность интеграции через GitHub Actions
+- CI/CD: Integrable via GitHub Actions.
 
-- Поддерживаемая структура тестов: каждый тест полностью самодостаточный и может выполняться отдельно.
+- Test structure: each test is fully self-contained and can run independently.
 
-- Data-Driven: расширяемая папка TestData, готовая к работе с CSV
+- Data-Driven: expandable TestData folder ready for CSV usage.
 
-- Умные ожидания: Пользовательские тайм-ауты + утилиты waitFor()
+- Smart waits: custom timeouts + waitFor() utilities
 
-- Рандомизированные тестовые данные для стабильности регрессионного анализа
+- Randomized test data for stable regression analysis
 
 - Path Aliases (@pages/BasePage)
 
-- Веб-интерфейс Test UI
+- Web Interface Test UI
 
-   - **server/server.js + public/index.html** — полнофункциональный веб-интерфейс:
+   - **server/server.js + public/index.html** — full-featured web interface:
 
-   - **Кнопка "Запуск Теста"** → `npx playwright test --reporter=html,json`
-   - **Детальная таблица** → парсинг `playwright-report.json` (TC-01, TC-02... статус/время)  
-   - **История запусков** → `test-history.json` (дата + результат + Подробно)
-   - **HTML отчет** → `/report/index.html` (официальный Playwright)
-   - **Постоянное сохранение** → F5/перезапуск сервера = история НЕ теряется
-   - **Логика:** Запуск → Детали → Закрыть → Новая строка в истории (сверху)
+   - **"Run Test" button** → `npx playwright test --reporter=html,json`
+   - **Detailed table** → parses `playwright-report.json` (TC-01, TC-02... status/time)  
+   - **Run history** → `test-history.json` (date + result + details)
+   - **HTML report** → `/report/index.html` (official Playwright)
+   - **Persistent storage** → F5/server restart = history is NOT lost
+   - **Logic:** Run → Details → Close → New row in history (at the top)
 
-- Покрытие автоматизации
+- Automation Coverage:
 
-     - Автоматизированы тест-кейсы, покрывающие:
-         - генерацию iframe
-         - валидацию размеров (min/max) Значения генерируются рандомно в пределах ограничений
-         - синхронизацию slider ↔ input
-         - граничные значения
-         - проверка невозможности ввода
-         - отмены
-         - переопределение логики
-         - отсутствие ошибок в консоли при успешной генерации
-         - скорость генерации при максимальном вводе данных (в идеале нужны вводные)
+     - Automated test cases cover:
+         - iframe generation
+         - size validation (min/max) — values generated randomly within limits
+         - slider ↔ input synchronization
+         - boundary values
+         - prevention of invalid input
+         - cancel actions
+         - logic overrides
+         - no console errors on successful generation
+         - generation speed with maximum input (input data required ideally)
 
-     - Часть тест-кейсов исключена из автоматизации:
-         - дублирующие проверки логики написания кода (не добавляют технической ценности заданию)
-         - сценарии, выходящие за рамки тестового задания (Out of Scope)
+     - Some test cases are excluded from automation:
+         - duplicate logic checks (no added technical value)
+         - scenarios beyond the task scope (Out of Scope)
 
-    Причины исключения явно указаны в документе с тест-кейсами.
+    Reasons for exclusion are clearly indicated in the test case document.
 
+## 🧪 Example Automated Test
 
-## ✅ Критерии оценки
-
-- Все тесты запускаются и проходят без ошибок.
-
-- Тесты покрывают функциональность генерации iframe, валидацию размеров, синхронизацию элементов.
-
-- Проект самодостаточный: инструкции в README позволяют запустить его на любой машине с Node.js.
-
-- Архитектура соответствует POM, код читаемый и структурированный.
-
-- Веб-интерфейс Test UI — кнопка запуска → таблица результатов + история
-
-- Парсинг JSON отчетов — точное соответствие Playwright (учитывает retries/workers)
-
-- Постоянная история — сохраняется между перезапусками (test-history.json)
-
-## 🧪 Пример автоматизированного теста
-
-Ниже пример теста на изменение ширины превью через поле ввода:
+Example of a test for changing preview width via input:
 
 ```ts
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-02 Проверка изменение ширины превью через input', async ({ page }) => {
+test('TC-02 Checking width change of preview through input', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 
-  // Генерируем случайную ширину от 230 до 1020
+  // Generate a random width from 230 to 1020
   const randomWidth = Math.floor(Math.random() * (1020 - 230 + 1)) + 230;
 
-  // Клик на поле ввода ширины
+  // Click on the width input field
   const widthInput = await page.locator('input[name="width"]');
   await widthInput.click();
   await widthInput.fill(randomWidth.toString());
   
-  // Нажимаем кнопку 'Сгенерировать превью'
+  // Click the 'Generate Preview' button
   const generateBtn = page.getByRole('button', { name: 'Сгенерировать превью' });
   await basePage.generatePreviewWithRetry(generateBtn);
+
   await basePage.checkCodeTextareaVisible();
-
-  // Получаем код iframe
+  // Get the iframe code
   const iframeCode = await basePage.getIframeCode();
-
-  // Cверяем данные
+  // Check that the iframe code data matches the entered value
   expect(iframeCode).toContain(`width="${randomWidth}"`);
-  
-  // Ждем загрузки превью
+  // Wait for the preview to load
   await basePage.checkPreviewVisible();
   await basePage.waitForIframeAttached();
-  
-  // Сверяем данные
+  // Check the data in the preview
   const width = await basePage.getIframeAttribute('width');
   expect(width).toBe(randomWidth.toString());
+  
 });
 ```
-## 📌 Примечания
+## 📌 Notes
 
-- Тесты не требуют ручной перезагрузки страницы между шагами — все проверки происходят динамически.
-
-- Значения слайдера корректно округляются по step и проверяются через Playwright expect.toHaveValue.
-
-- Рандомизация значений используется для проверки стабильности синхронизации элементов.
-
-- Все тесты используют рандомные значения для ширины, цветовой темы и тематик.
-
-- При каждом запуске теста в консоль выводятся использованные значения (например, ширина, выбранная тема, код события), чтобы можно было точно видеть, с какими данными проходил тест. Это упрощает отладку и воспроизведение теста.
-
-- Для теста выбора тематики (TC-08) используется CSV-файл topics.csv с парами «название темы — код события» для дата-драйвен проверки.
+- Tests do not require manual page reloads between steps — all checks are dynamic.
+- Slider values are rounded according to step and verified via Playwright expect.toHaveValue.
+- Randomization is used to check element synchronization stability.
+- All tests use random values for width, color theme, and topics.
+- During each test run, console outputs used values (e.g., width, selected topic, event code) to allow precise debugging and reproduction.
+- For topic selection test (TC-08), topics.csv is used with "topic name — event code" pairs for data-driven verification.
 

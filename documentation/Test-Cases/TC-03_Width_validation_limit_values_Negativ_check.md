@@ -1,18 +1,18 @@
-## **TC-03 Проверка невалидных значений ввода ширины превью - граничные значения**
+## **TC-03 Width input invalid values validation - boundary values**
 
-***Priority***: P2
+***Priority***: P2  
 ***Automation***: [Yes](/tests/TC-03_Width_validation_limit_values_Negativ_check.spec.ts)
 
 ***Steps***:
 
-1. Ввести значение ширины меньше минимального (от 0 до 229 включительно) и нажать "Сгенерировать превью".
+1. Enter a width value less than the minimum (from 0 to 229 inclusive) and click "Generate preview".
 
-2. Ввести значение ширины больше максимального (от 1021 до 99999) и нажать "Сгенерировать превью".
+2. Enter a width value greater than the maximum (from 1021 to 99999) and click "Generate preview".
 
 ***Expected result***:
 
-- Если введено < 230 → поле и iframe автоматически устанавливают width = 230.
+- If entered < 230 → the field and iframe automatically set width = 230.
 
-- Если введено > 1020 → поле и iframe автоматически устанавливают width = 1020.
+- If entered > 1020 → the field and iframe automatically set width = 1020.
 
-- iframe и превью корректно обновляются
+- iframe and preview update correctly

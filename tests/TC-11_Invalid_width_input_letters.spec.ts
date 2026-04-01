@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
 
-test('TC-11 Проверка невалидных значений ввода ширины (буквы)', async ({ page }) => {
+test('TC-11 Check invalid width input values (letters)', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

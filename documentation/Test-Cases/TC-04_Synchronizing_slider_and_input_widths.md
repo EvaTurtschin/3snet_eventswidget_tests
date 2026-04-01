@@ -1,18 +1,18 @@
-## **TC-04 Проверка синхронизация slider и ввода значения (ширина)**
+## **TC-04 Checking synchronization of slider and input value (width)**
 
 ***Priority***: P2
 ***Automation***: [Yes](/tests/TC-04_Synchronizing_slider_and_input_widths.spec.ts)
 
 ***Steps***:
 
-1. Изменить ширину через slider
+1. Change the width via slider
 
-2. Проверить значение в input
+2. Check the value in input
 
-3. Изменить input
+3. Change the input
 
-4. Проверить позицию slider
+4. Check the slider position
 
 ***Expected result***:
 
-- Полная синхронизация в обе стороны
+- Full synchronization in both directions

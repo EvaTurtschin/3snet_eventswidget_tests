@@ -1,40 +1,40 @@
 import { test, expect } from '@playwright/test';
 
 
-test('TC-04 Проверка синхронизация slider и ввода значения (ширина)', async ({ page }) => {
+test('TC-04 Checking synchronization of slider and input value (width)', async ({ page }) => {
   await page.goto('');
 
   const widthRange = page.locator('input[id="width-range"]');
   const widthInput = page.locator('input[name="width"]');
 
-  // Задаем шаги для слайдера
+  // Set steps for the slider
   const min = 230;
   const max = 1020;
   const step = 10;
 
-  // Проверка slider → input
-  // Генерируем случайное значение на слайдере ширины
+  // Check slider → input
+  // Generate a random value on the width slider
   const sliderValue = Math.floor(Math.random() * ((max - min) / step + 1)) * step + min;
 
-  // slider округляет значение -> приводим данные в соответствие с числовым значением
+  // slider rounds the value -> bring the data in line with the numerical value
   await widthRange.focus();
-  // Заполняем полученное от слайдера значение в поле ввода ширины
+  // Fill the value obtained from the slider into the width input field
   await widthRange.fill(sliderValue.toString());  
-  // Проверяем данные поля ввода на соответствие значению слайдера ширины
+  // Check the input field data for correspondence to the width slider value
   await expect(widthInput).toHaveValue(sliderValue.toString());
 
-  // Проверка input → slider
-  // Генерируем случайное значение в валидном диапазоне
+  // Check input → slider
+  // Generate a random value in the valid range
   const inputValue = Math.floor(Math.random() * ((max - min) / step + 1)) * step + min;
-  // Вводим значение в поле ввода ширины
+  // Enter the value in the width input field
   await widthInput.fill(inputValue.toString());
-  // Нажимаем 'Enter'
+  // Press 'Enter'
   await widthInput.press('Enter');
 
-  // slider округляет значение -> приводим данные в соответствие с числовым значением
+  // slider rounds the value -> bring the data in line with the numerical value
   const expectedSliderValue = Math.round(inputValue / step) * step;
 
-  // Проверяем данные слайдера на соответствие полю ввода ширины
+  // Check the slider data for correspondence to the width input field
   await expect(widthRange).toHaveValue(expectedSliderValue.toString());
   
 });

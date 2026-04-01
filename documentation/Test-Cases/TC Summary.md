@@ -1,84 +1,167 @@
 # Test Cases Summary — Calendar Widget Generator
 ## 1. Scope
 
-Тестируется страница генерации iframe-кода календаря мероприятий:
+# Test Cases Summary — Calendar Widget Generator
+## 1. Scope
 
-***Покрытие:***
+The page for generating iframe code for the events calendar is being tested:
 
-- Функциональная логика генерации iframe
+***Coverage:***
 
-- Валидация размеров
+- Functional logic of iframe generation
 
-- Синхронизация элементов управления
+- Size validation
 
-- Передача параметров в src
+- Controls synchronization
 
-- Копирование кода
+- Passing parameters to src
 
-***Не покрывается:***
+- Code copy
 
-- Внутренний контент iframe (внешний сервис)
+***Not covered:***
 
-- Кроссбраузерность
+- Inner iframe content (external service)
 
-- Визуальная пиксель-перфект проверка
+- Cross-browser compatibility
 
-## 2. Приоритизация
+- Visual pixel-perfect verification
 
-***P1*** — критично для основной функции генерации
+## 2. Prioritization
 
-***P2*** — важно, влияет на UX и корректность состояния
+***P1*** — critical for the main generation function
 
-***P3*** — граничные и дополнительные проверки
+***P2*** — important, affects UX and state correctness
 
-## 3. Обоснование автоматизации
+***P3*** — boundary and additional checks
 
-***Автоматизированы сценарии***:
+## 3. Automation rationale
 
-- Повторяемые
+***Automated scenarios***:
 
-- Критичные для бизнес-логики
+- Repeatable
 
-- Имеющие явный ожидаемый результат
+- Critical for business logic
 
-- Подверженные регрессии (валидация, синхронизация)
+- Have a clear expected result
 
-***Не автоматизированы***:
+- Prone to regressions (validation, synchronization)
 
-- Проверки установки высоты контейнера (дублируют логику установки ширины, не критично для тестового задания)
+***Not automated***:
 
-- Смена языка страницы (RU / EN)
+- Checks for container height setting (duplicate width logic, not critical for test task)
 
-- Визуальная эстетика
+- Page language switch (RU / EN)
 
-- Тексты инструкций
+- Visual aesthetics
 
-- Проверка рекомендаций по вставке кода
+- Instruction texts
+
+- Code insertion recommendations checks
 
 ## 4. Out of Scope
 
-В рамках данного тестового проекта не автоматизировано:
+In this test project, not automated:
 
-- Смена языка страницы (Русский / English)
+- Page language switch (Russian / English)
 
-- Кроссбраузерное тестирование
+- Cross-browser testing
 
-- Pixel-perfect визуальное сравнение
+- Pixel-perfect visual comparison
 
-- Accessibility-тестирование
+- Accessibility testing
 
-- Performance-тестирование
+- Performance testing
 
-- Нагрузочное тестирование
+- Load testing
 
-- Проверка SEO и мета-тегов
+- SEO and meta tags checks
 
-- Проверка рекомендаций по размещению iframe в HTML-документе
+- Recommendations for embedding iframe in HTML document
 
-**Причины**:
+**Reasons**:
 
-- iframe загружает внешний ресурс
+- iframe loads external resource
 
-- фокус проекта — логика генерации
+- project focus is generation logic
 
-- ограниченный объём тестового задания
+- limited scope of the test task
+
+***Coverage:***
+
+- Functional logic of iframe generation
+
+- Size validation
+
+- Controls synchronization
+
+- Passing parameters to src
+
+- Code copy
+
+***Not covered:***
+
+- Inner iframe content (external service)
+
+- Cross-browser compatibility
+
+- Visual pixel-perfect verification
+
+## 2. Prioritization
+
+***P1*** — critical for the main generation function
+
+***P2*** — important, affects UX and state correctness
+
+***P3*** — boundary and additional checks
+
+## 3. Automation rationale
+
+***Automated scenarios***:
+
+- Repeatable
+
+- Critical for business logic
+
+- Have a clear expected result
+
+- Prone to regressions (validation, synchronization)
+
+***Not automated***:
+
+- Checks for container height setting (duplicate width logic, not critical for test task)
+
+- Page language switch (RU / EN)
+
+- Visual aesthetics
+
+- Instruction texts
+
+- Code insertion recommendations checks
+
+## 4. Out of Scope
+
+In this test project, not automated:
+
+- Page language switch (Russian / English)
+
+- Cross-browser testing
+
+- Pixel-perfect visual comparison
+
+- Accessibility testing
+
+- Performance testing
+
+- Load testing
+
+- SEO and meta tags checks
+
+- Recommendations for embedding iframe in HTML document
+
+**Reasons**:
+
+- iframe loads external resource
+
+- project focus is generation logic
+
+- limited scope of the test task

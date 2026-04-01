@@ -1,24 +1,18 @@
-## **TC-14 Проверка генерации превью с валидными данными без console ошибок**
+## **TC-14 Verify preview generation with valid data and no console errors**
 
-***Priority***: P1
+***Priority***: P1  
 ***Automation***: [YES](/tests/TC-14_Generating_preview_with_valid_data_with_no_console_error.spec.ts)
 
 ***Steps***:
 
-1. Выбрать любую Тематику
-
-2. Выбрать любую Страну
-
-3. Ввести максимальное значение ширины 1020
-
-4. Ввести минимальное значение высоты 240
-
-5. Выбрать любую цветовую тему (не дефолт turquoise)
-
-8. Нажать кнопку "Скопировать код"
-
-9. Сгенерировать превью
+1. Select any Topic  
+2. Select any Country  
+3. Enter maximum width value 1020  
+4. Enter minimum height value 240  
+5. Select any color theme (not default turquoise)  
+6. Click the "Copy code" button  
+7. Generate the preview
 
 ***Expected result***:
 
-- Проверяем, что консоль без ошибок
+- Verify the console has no errors

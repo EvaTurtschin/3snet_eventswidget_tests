@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-12 Последняя выбранная цветовая тема перезаписывает предыдущие выборы', async ({ page }) => {
+test('TC-12 Last selected color theme overwrites previous selections', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

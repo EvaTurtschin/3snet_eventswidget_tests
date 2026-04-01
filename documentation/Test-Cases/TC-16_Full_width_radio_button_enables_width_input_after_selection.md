@@ -1,14 +1,14 @@
-## **TC-16 После активации radio-button "на всю ширину контейнера" невозможен ввод значений в поле ширины блока**
+## **TC-16 After activating the "full width of container" radio button, it is impossible to enter values in the block width field**
 
 ***Priority***: P2
 ***Automation***: [YES](/tests/TC-16_Full_width_radio_button_enables_width_input_after_selection.spec.ts)
 
 ***Steps***:
 
-1. Активировать radio button На всю ширину контейнера
+1. Activate the radio button "Full width of container"
 
-2. Проверить возможность ввода значений в поле ширины блока
+2. Check the possibility of entering values in the block width field
 
 ***Expected result***:
 
-- Невозможно ввести значения в поле ширины блока
+- It is impossible to enter values in the block width field

@@ -1,20 +1,20 @@
-## **TC-09 Проверка функции отмены выбора тематики**
+## **TC-09 Checking the topic selection cancellation function**
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-09_Canceling_topic_selection.spec.ts)
 
 ***Steps***:
 
-1. Выбрать любую тему из списка
+1. Select any topic from the list
 
-2. Нажать кнопку "Сгенерировать превью"
+2. Click the "Generate Preview" button
 
-3. Проверить обновленный параметр event_group в коде iframe
+3. Check the updated event_group parameter in the iframe code
 
-4. Отменить выбор темы
+4. Cancel the topic selection
 
-5. Нажать кнопку "Сгенерировать превью"
+5. Click the "Generate Preview" button
 
 ***Expected result***:
 
-- В src актуальный параметр event_group - последняя выбранная тематика
+- In src, the current event_group parameter is the last selected topic

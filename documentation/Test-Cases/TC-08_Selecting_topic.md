@@ -1,14 +1,14 @@
-## **TC-08 Проверка выбора тематики**
+## **TC-08 Topic Selection Verification**
 
 ***Priority***: P1
 ***Automation***: [Yes](/tests/TC-08_Selecting_topic.spec.ts)
 
 ***Steps***:
 
-1. Выбрать Тематику
+1. Select Topic
 
-2. Нажать кнопку "Сгенерировать превью"
+2. Click the "Generate Preview" button
 
 ***Expected result***:
 
-- В src обновлён параметр в значении event_group=
+- The src parameter is updated with event_group=

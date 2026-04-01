@@ -1,18 +1,18 @@
-## **TC-15 Активированная radio-button "на всю ширину контейнера" перезаписывает предыдущий ввод значений ширины блока**
+## **TC-15 Activated "full-width" radio button overwrites previous width input**
 
 ***Priority***: P2
 ***Automation***: [YES](/tests/TC-15_Full-width_radio%20_button_overwrites_width_input.spec.ts)
 
 ***Steps***:
 
-1. Ввести валидное значение ширины (значения от 230 до 1020)
+1. Enter a valid width value (values from 230 to 1020)
 
-2. Активировать radio button На всю ширину контейнера
+2. Activate the "Full width of container" radio button
 
-3. Нажать кнопку "Сгенерировать превью"
+3. Click the "Generate Preview" button
 
 ***Expected result***:
 
-- В src обновлён параметр width="100%"
+- In src, the width parameter is updated to "100%"
 
-- превью перезагружается на полную ширину контейнера
+- Preview reloads to full width of the container

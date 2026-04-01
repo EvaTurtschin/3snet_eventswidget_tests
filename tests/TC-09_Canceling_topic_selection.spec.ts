@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-09 Проверка функции отмены выбора тематики', async ({ page }) => {
+test('TC-09 Checking the topic selection cancellation function', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 

@@ -1,32 +1,32 @@
 import { test, expect } from '@playwright/test';
 import BasePage from '@pages/BasePage';
 
-test('TC-06 Проверка выбора цветовой темы для генерации превью', async ({ page }) => {
+test('TC-06 Checking color theme selection for preview generation', async ({ page }) => {
   const basePage = new BasePage(page);
   await page.goto('');
 
-// Список цветовых тем для выбора не дефолтной
+// List of color themes for selection not default
 const colorThemes = ['purple', 'green', 'blue'];
 
-// Генерируем случайный выбор цветовой темы из списка недефолтных
+// Generate a random selection of color theme from the list of non-default
 const randomColorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
-// Выводим в консоль информацию о выбранной в этой проверке цветовой теме
+// Output to console information about the selected color theme in this check
 console.log(`Selected theme in TC-06: ${randomColorTheme}`);
-// Активируем radio-button выбранной цветовой темы
+// Activate the radio-button of the selected color theme
 await page.locator(`//label[input[@value="${randomColorTheme}"]]`).check();
-// Нажать кнопку "Сгенерировать превью"
+// Click the "Generate Preview" button
 const generateBtn = page.getByRole('button', { name: 'Сгенерировать превью' });
 await basePage.generatePreviewWithRetry(generateBtn);
 
 await basePage.checkCodeTextareaVisible();
- // Получаем код iframe
+ // Get the iframe code
 const iframeCode = await basePage.getIframeCode();
- //  Проверяем цветовую тему прописанную в коде iframe
+ // Check the color theme specified in the iframe code
 expect(iframeCode).toContain(randomColorTheme);
-  // Ждем загрузки превью
+  // Wait for preview to load
 await basePage.checkPreviewVisible();
 await basePage.waitForIframeAttached();
-// Проверяем цветовую тему в превью
+// Check the color theme in the preview
 const src = await basePage.iframePreview.getAttribute('src');
 expect(src).toContain(randomColorTheme);
 

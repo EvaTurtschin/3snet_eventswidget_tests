@@ -68,7 +68,7 @@ app.get("/run-tests", (req, res) => {
 
         try {
           if (fs.existsSync(reportPath)) {
-            console.log("✅ Читаем:", reportPath);
+            console.log("Читаем:", reportPath);
             const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 
             for (const suite of report.suites) {

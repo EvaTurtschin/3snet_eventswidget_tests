@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-// require('dotenv').config(); для хранения URL, логинов, токенов
+// require('dotenv').config(); for URL, logins, tokens
 
 export default defineConfig({
   testDir: './tests',
@@ -9,7 +9,9 @@ export default defineConfig({
 
   reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   
-/* настройки для CI
+  // Now we have defolt timeouts here, before CI integration we should fix it directly - to avoid flacky tests
+
+/* for CI
   forbidOnly: !!process.env.CI, 
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,

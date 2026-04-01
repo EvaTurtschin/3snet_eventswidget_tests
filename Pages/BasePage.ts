@@ -81,7 +81,7 @@ export default class BasePage {
     
     // ожидаем ошибки = 0
     if (errors.length === 0) {
-      console.log('✅ Console: 0 ошибок при генерации превью');
+      console.log('✅ Console: 0 errors while Preview generation');
     } else {
       console.error('🚨 Console errors:', errors.join('\n'));
       throw new Error(`Found ${errors.length} console errors`);
