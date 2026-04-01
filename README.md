@@ -9,7 +9,6 @@ The repository contains the following artifacts:
 
 - **Project Task Text** — original description of requirements.
 - **Test Cases** — list of test cases with priorities and step descriptions.
-- **Bug Reports** — intended for recorded defects (if any are found during testing).
 
 Test cases and bug reports are maintained separately from automated tests and reflect a full analysis of functionality.
 
@@ -19,7 +18,6 @@ Test cases and bug reports are maintained separately from automated tests and re
 >│                                                
 >├─ documentation                                         
 >│    ├─ project task.md                                                                       
->│    ├─ bug-reports.md                                                                     
 >│    └─ Test-Cases                                                                                        
 >│           ├─ TC-01_.md                                                                           
 >│           └─...                                                           
