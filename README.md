@@ -19,12 +19,10 @@ Test cases and bug reports are maintained separately from automated tests and re
 >│                                                
 >├─ documentation                                         
 >│    ├─ project task.md                                                                       
->│    ├─ bug-reports.md                                                                       
->│    └─ Test-Cases                                                                
->│       ├─ TC-01_.md                                
->│       ├─ TC-02_.md                             
->│       ├─                                              
->│       └─...                                   
+>│    ├─ bug-reports.md                                                                     
+>│    └─ Test-Cases                                                                                        
+>│       ├─ TC-01_.md                                                                           
+>│       └─...                                                           
 >│                                                
 >├─ Pages/ # Page Object Classes                                                
 >│    └─ BasePage.ts                                    
@@ -115,7 +113,7 @@ node server/server.js
 npm run app
 ```
 
-  - Open in browser:  ***[Browser Link](http://localhost:3000)***
+## 🌐 Open in browser:  ***[Browser Link](http://localhost:3000)***
 
 - #### *Web Interface Features:*
 ```bash
